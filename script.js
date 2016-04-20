@@ -15,5 +15,16 @@ $(document).ready(function(){
     else {
       console.log('You clicked the wrong answer.')
     }
+    $(function() {
+      var incorrect = $('incorrect');
+      $('incorrect').hide;
+      $(incorrect).on('click', function () {
+        $(incorrect).next()
+          .fadeIn(500)
+          .siblings('incorrect')
+          .addClass('incorrect');
+          $(incorrect).find(incorrect).fadeOut();
+      });
+    });
   });
 });
